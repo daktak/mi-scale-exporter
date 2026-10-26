@@ -11,6 +11,7 @@ namespace MiScaleExporter.MAUI.Views
     public partial class FormPage : ContentPage
     {
         private IFormViewModel vm;
+        private bool _autoUploadPending;
         public FormPage()
         {
             InitializeComponent();
@@ -25,6 +26,11 @@ namespace MiScaleExporter.MAUI.Views
             base.OnAppearing();
             await vm.LoadPreferencesAsync();
             vm.LoadBodyComposition();
+            if (_autoUploadPending)
+            {
+                _autoUploadPending = false;
+                vm.AutoUpload();
+            }
         }
 
         public bool AutoUpload
@@ -33,7 +39,7 @@ namespace MiScaleExporter.MAUI.Views
             {
                 if (value)
                 {
-                    vm.AutoUpload();
+                    _autoUploadPending = true;
                 }
             }
         }

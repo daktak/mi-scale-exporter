@@ -10,6 +10,7 @@ namespace MiScaleExporter.MAUI.Views
     public partial class IntervalsFormPage : ContentPage
     {
         private IIntervalsFormViewModel vm;
+        private bool _autoUploadPending;
 
         public IntervalsFormPage()
         {
@@ -25,6 +26,21 @@ namespace MiScaleExporter.MAUI.Views
             base.OnAppearing();
             await vm.LoadPreferencesAsync();
             vm.LoadBodyComposition();
+            if (_autoUploadPending)
+            {
+                _autoUploadPending = false;
+                _ = Task.Run(async () =>
+                {
+                    await vm.AutoUploadAsync();
+                    if (!string.IsNullOrWhiteSpace(_continueTo) && _continueTo.Equals("garmin", StringComparison.OrdinalIgnoreCase))
+                    {
+                        MainThread.BeginInvokeOnMainThread(async () =>
+                        {
+                            await Shell.Current.GoToAsync("//FormPage?autoUpload=true");
+                        });
+                    }
+                });
+            }
         }
 
         private string _continueTo;
@@ -41,17 +57,7 @@ namespace MiScaleExporter.MAUI.Views
             {
                 if (value)
                 {
-                    _ = Task.Run(async () =>
-                    {
-                        await vm.AutoUploadAsync();
-                        if (!string.IsNullOrWhiteSpace(_continueTo) && _continueTo.Equals("garmin", StringComparison.OrdinalIgnoreCase))
-                        {
-                            MainThread.BeginInvokeOnMainThread(async () =>
-                            {
-                                await Shell.Current.GoToAsync("//FormPage?autoUpload=true");
-                            });
-                        }
-                    });
+                    _autoUploadPending = true;
                 }
             }
         }
