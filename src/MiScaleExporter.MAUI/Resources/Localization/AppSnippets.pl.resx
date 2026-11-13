@@ -156,6 +156,33 @@
   <data name="BodyType" xml:space="preserve">
     <value>Typ Ciała</value>
   </data>
+  <data name="BodyTypeBalanced" xml:space="preserve">
+    <value>Zbalansowany</value>
+  </data>
+  <data name="BodyTypeBalancedMuscular" xml:space="preserve">
+    <value>Zbalansowany, umięśniony</value>
+  </data>
+  <data name="BodyTypeBalancedSkinny" xml:space="preserve">
+    <value>Zbalansowany, szczupły</value>
+  </data>
+  <data name="BodyTypeLackOfExercise" xml:space="preserve">
+    <value>Brak aktywności</value>
+  </data>
+  <data name="BodyTypeObese" xml:space="preserve">
+    <value>Otyły</value>
+  </data>
+  <data name="BodyTypeOverweight" xml:space="preserve">
+    <value>Z nadwagą</value>
+  </data>
+  <data name="BodyTypeSkinny" xml:space="preserve">
+    <value>Szczupły</value>
+  </data>
+  <data name="BodyTypeSkinnyMuscular" xml:space="preserve">
+    <value>Szczupły, umięśniony</value>
+  </data>
+  <data name="BodyTypeThickSet" xml:space="preserve">
+    <value>Krępej budowy</value>
+  </data>
   <data name="BoneMassPercent" xml:space="preserve">
     <value>Masa kostna (Kg)</value>
   </data>

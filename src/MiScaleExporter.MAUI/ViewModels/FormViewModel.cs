@@ -330,8 +330,28 @@ namespace MiScaleExporter.MAUI.ViewModels
         public int? BodyType
         {
             get => _bodyType;
-            set => SetProperty(ref _bodyType, value);
+            set
+            {
+                if (SetProperty(ref _bodyType, value))
+                {
+                    OnPropertyChanged(nameof(BodyTypeDisplay));
+                }
+            }
         }
+
+        public string BodyTypeDisplay => BodyType switch
+        {
+            1 => AppSnippets.BodyTypeObese,
+            2 => AppSnippets.BodyTypeOverweight,
+            3 => AppSnippets.BodyTypeThickSet,
+            4 => AppSnippets.BodyTypeLackOfExercise,
+            5 => AppSnippets.BodyTypeBalanced,
+            6 => AppSnippets.BodyTypeBalancedMuscular,
+            7 => AppSnippets.BodyTypeSkinny,
+            8 => AppSnippets.BodyTypeBalancedSkinny,
+            9 => AppSnippets.BodyTypeSkinnyMuscular,
+            _ => string.Empty
+        };
 
         private string _waterPercentage;
 

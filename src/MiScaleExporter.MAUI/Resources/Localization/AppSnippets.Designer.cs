@@ -187,6 +187,87 @@ namespace MiScaleExporter.MAUI.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Balanced.
+        /// </summary>
+        internal static string BodyTypeBalanced {
+            get {
+                return ResourceManager.GetString("BodyTypeBalanced", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Balanced-muscular.
+        /// </summary>
+        internal static string BodyTypeBalancedMuscular {
+            get {
+                return ResourceManager.GetString("BodyTypeBalancedMuscular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Balanced-skinny.
+        /// </summary>
+        internal static string BodyTypeBalancedSkinny {
+            get {
+                return ResourceManager.GetString("BodyTypeBalancedSkinny", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lack of exercise.
+        /// </summary>
+        internal static string BodyTypeLackOfExercise {
+            get {
+                return ResourceManager.GetString("BodyTypeLackOfExercise", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Obese.
+        /// </summary>
+        internal static string BodyTypeObese {
+            get {
+                return ResourceManager.GetString("BodyTypeObese", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overweight.
+        /// </summary>
+        internal static string BodyTypeOverweight {
+            get {
+                return ResourceManager.GetString("BodyTypeOverweight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Skinny.
+        /// </summary>
+        internal static string BodyTypeSkinny {
+            get {
+                return ResourceManager.GetString("BodyTypeSkinny", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Skinny-muscular.
+        /// </summary>
+        internal static string BodyTypeSkinnyMuscular {
+            get {
+                return ResourceManager.GetString("BodyTypeSkinnyMuscular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thick-set.
+        /// </summary>
+        internal static string BodyTypeThickSet {
+            get {
+                return ResourceManager.GetString("BodyTypeThickSet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bone mass (Lbs).
         /// </summary>
         internal static string BoneMassLbs {

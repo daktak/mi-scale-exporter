@@ -171,6 +171,10 @@
                                 </Entry.Behaviors>
                             </Entry>
 
+                            <Label
+                                FontSize="Small"
+                                Text="{Binding BodyTypeDisplay}" />
+
                         </StackLayout>
 
                         <StackLayout Grid.Row="5" Grid.Column="1">
