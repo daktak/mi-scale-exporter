@@ -156,6 +156,33 @@
   <data name="BodyType" xml:space="preserve">
     <value>Body Type</value>
   </data>
+  <data name="BodyTypeBalanced" xml:space="preserve">
+    <value>Balanced</value>
+  </data>
+  <data name="BodyTypeBalancedMuscular" xml:space="preserve">
+    <value>Balanced-muscular</value>
+  </data>
+  <data name="BodyTypeBalancedSkinny" xml:space="preserve">
+    <value>Balanced-skinny</value>
+  </data>
+  <data name="BodyTypeLackOfExercise" xml:space="preserve">
+    <value>Lack of exercise</value>
+  </data>
+  <data name="BodyTypeObese" xml:space="preserve">
+    <value>Obese</value>
+  </data>
+  <data name="BodyTypeOverweight" xml:space="preserve">
+    <value>Overweight</value>
+  </data>
+  <data name="BodyTypeSkinny" xml:space="preserve">
+    <value>Skinny</value>
+  </data>
+  <data name="BodyTypeSkinnyMuscular" xml:space="preserve">
+    <value>Skinny-muscular</value>
+  </data>
+  <data name="BodyTypeThickSet" xml:space="preserve">
+    <value>Thick-set</value>
+  </data>
   <data name="BoneMassPercent" xml:space="preserve">
     <value>Bone mass (Kg)</value>
   </data>
