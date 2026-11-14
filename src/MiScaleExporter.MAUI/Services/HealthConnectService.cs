@@ -81,14 +81,17 @@ public class HealthConnectService : IHealthConnectService
 
             async Task TryWriteAsync(HealthParameter parameter, double value, string unit)
             {
-                if (value <= 0)
+                if (!double.IsFinite(value) || value <= 0)
                 {
                     return;
                 }
 
                 try
                 {
-                    await _health.WriteAsync(parameter, when, value, unit);
+                    if (!await _health.WriteAsync(parameter, when, value, unit))
+                    {
+                        throw new InvalidOperationException("Health provider did not confirm the write.");
+                    }
                     written++;
                 }
                 catch (Exception ex)
@@ -100,11 +103,21 @@ public class HealthConnectService : IHealthConnectService
             }
 
             await TryWriteAsync(HealthParameter.BodyMass, weight, Units.Mass.Kilograms);
+#if ANDROID
+            await TryWriteAsync(HealthParameter.BodyFatPercentage,
+                AndroidHealthConnectValues.BodyFatForPlugin(fat), Units.Others.Percentage);
+#else
             await TryWriteAsync(HealthParameter.BodyFatPercentage, fat, Units.Others.Percentage);
+#endif
             await TryWriteAsync(HealthParameter.BoneMass, bodyComposition.BoneMass, Units.Mass.Kilograms);
             await TryWriteAsync(HealthParameter.BodyWaterMass, bodyWaterMass, Units.Mass.Kilograms);
             await TryWriteAsync(HealthParameter.LeanBodyMass, leanBodyMass, Units.Mass.Kilograms);
+#if ANDROID
+            await TryWriteAsync(HealthParameter.BasalEnergyBurned,
+                AndroidHealthConnectValues.BasalMetabolicRateWatts(bodyComposition.BMR), "W");
+#else
             await TryWriteAsync(HealthParameter.BasalEnergyBurned, bodyComposition.BMR, Units.Energy.Kilocalories);
+#endif
 
             if (written == 0)
             {

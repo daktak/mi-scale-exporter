@@ -1,5 +1,10 @@
 # mi-scale-exporter
 
+This is a fork of [lswiderski/mi-scale-exporter](https://github.com/lswiderski/mi-scale-exporter), based on [daktak's fork](https://github.com/daktak/mi-scale-exporter), with added support for Android Health Connect and Intervals.icu alongside Garmin Connect.
+
+Enable **Health Connect → Export scans to Health Connect** in Settings to automatically export weight, body fat percentage, bone mass, body water mass, lean body mass and basal metabolic rate after each successful Bluetooth scan. Grant the requested write permissions when prompted. Xiaomi Cloud imports and manual entries do not trigger this export.
+
+
 Mobile App to export data from Mi Body Composition Scale (works with Mi Scale too) and upload it to Garmin Connect Cloud. It also allows you to upload manually entered body composition data to the Garmin cloud.
 
 Instruction: [https://lswiderski.github.io/mi-scale-exporter/](https://lswiderski.github.io/mi-scale-exporter/)
